@@ -31,7 +31,7 @@ function onSubmitForm(evt) {
 
 }
 
-(function dataLocalStorage() {
+// (function dataLocalStorage() {
 	const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
 	
 
@@ -39,4 +39,4 @@ function onSubmitForm(evt) {
 		form.email.value = data.email;
 		form.message.value = data.message;	
 	}
-})();
+// })();
