@@ -16,7 +16,7 @@ function onFormInput(evt) {
 }
 
 function onSubmitForm(evt) {
-  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+//   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   evt.preventDefault();
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
