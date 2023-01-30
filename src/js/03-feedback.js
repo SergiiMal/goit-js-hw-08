@@ -29,8 +29,9 @@ const saveInput = localStorage.getItem(STORAGE_KEY);
 const data = JSON.parse(saveInput);
  
 	if (data) {
+		form.message.value = data.message || '';
 		 form.email.value = data.email || '';
- 	    form.message.value = data.message || '';
+ 	    
 	}
   
 };
