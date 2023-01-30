@@ -18,13 +18,16 @@ function onFormData(evt) {
 function onSubmitForm(evt) {
 	console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
 	evt.preventDefault();
+
+	formData.email = form.email.value;
+	formData.message = form.message.value;
+
+	if (formData.email === '' || formData.message === '') {
+		return;
+	}
+
 	evt.currentTarget.reset();
 	localStorage.removeItem(STORAGE_KEY);
-	
-	if (formData.email === '' || formData.message === '') {
-    return;
-  }
-
 
 }
 
