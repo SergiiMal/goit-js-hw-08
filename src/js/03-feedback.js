@@ -14,6 +14,7 @@ function onFormData(evt) {
 	formData[evt.target.name] = evt.target.value;
 	localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
+
 function onSubmitForm(evt) {
 	console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
 	evt.preventDefault();
@@ -23,9 +24,10 @@ function onSubmitForm(evt) {
 	if (formData.email === '' || formData.message === '') {
     return;
   }
-console.log(formData);
+
 
 }
+
 (function dataLocalStorage() {
 	const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
 	
