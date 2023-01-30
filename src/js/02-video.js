@@ -10,12 +10,12 @@ function onPlay({ seconds }) {
 };
 
 
-function load ()
-const dataStoreage = localStorage.getItem('videoplayer-current-time') 
-if (dataStoreage) {
-		 player.setCurrentTime(dataStoreage);
- }
-
+function load() {
+	const dataStoreage = localStorage.getItem('videoplayer-current-time')
+	if (dataStoreage) {
+		player.setCurrentTime(dataStoreage);
+	}
+}
 // const load = key => {
   
 //   try {
