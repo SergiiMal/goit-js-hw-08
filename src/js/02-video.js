@@ -11,10 +11,12 @@ function onPlay({ seconds }) {
 };
 
 
-function load() {
-	const dataStoreage = localStorage.getItem(LOCALSTORAGE_KEY)
-	if (dataStoreage) {
-		player.setCurrentTime(dataStoreage);
-	}
-};
+// function load() {
+// 	const dataStoreage = localStorage.getItem(LOCALSTORAGE_KEY)
+// 	if (dataStoreage) {
+// 		player.setCurrentTime(dataStoreage);
+// 	}
+// };
+
+player.setCurrentTime(localStorage.length !== 0 ? localStorage.getItem(LOCALSTORAGE_KEY) : 0 )
 
