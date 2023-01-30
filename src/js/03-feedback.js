@@ -6,7 +6,9 @@ const STORAGE_KEY = 'feedback-form-state';
 
 form.addEventListener('input', throttle(onFormData, 500));
 form.addEventListener('submit', onSubmitForm);
-	
+
+dataLocalStorage();
+
 const formData = {};
 
 function onFormData(evt) {
@@ -32,7 +34,7 @@ function onSubmitForm(evt) {
 }
 
 
-(function dataLocalStorage() {
+function dataLocalStorage() {
 
 	const email = document.querySelector('.feedback-form input');
 	const message = document.querySelector('.feedback-form textarea')
@@ -45,4 +47,4 @@ function onSubmitForm(evt) {
 		form.email.value = data.email;
 		form.message.value = data.message;
 	}
-})();
+};
