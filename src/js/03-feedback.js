@@ -6,8 +6,7 @@ form.addEventListener('submit', onSubmitForm);
 	
 const formData = {};
 
-function onFormData(evt) {
-	
+function onFormData(evt) {	
 	formData[evt.target.name] = evt.target.value;
 	localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
@@ -16,6 +15,7 @@ function onSubmitForm(evt) {
 	evt.preventDefault();
 	evt.currentTarget.reset();
 	localStorage.removeItem('feedback-form-state');
+
 }
 (function dataLocalStorage() {
 	const data = JSON.parse(localStorage.getItem('feedback-form-state'));
@@ -26,8 +26,3 @@ function onSubmitForm(evt) {
 		message.value = data.message;
 	}
 })();
-
-
-
-
-
