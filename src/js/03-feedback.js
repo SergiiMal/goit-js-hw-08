@@ -11,7 +11,7 @@ form.addEventListener('submit', onSubmitForm);
 dataLocalStorage();
 
 function onFormInput(evt) {
-  formData[e.target.name] = evt.target.value;
+  formData[evt.target.name] = evt.target.value;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
