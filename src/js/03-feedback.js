@@ -3,6 +3,7 @@ import { saveToStorage, loadFromStorage } from './storage.js';
 
 const form = document.querySelector('.feedback-form');
 const STORAGE_KEY = 'feedback-form-state';
+
 const dataInput = {
 	email: '',
 	message: '',
@@ -10,8 +11,9 @@ const dataInput = {
 
 function saveToInput(evt) {
 	dataInput.email = evt.currentTarget[0].value;
+	// console.log(evt.currentTarget.children)
 	dataInput.message = evt.currentTarget[1].value;
-	const savedInput = saveToStorage(STORAGE_KEY, dataInput);
+	saveToStorage(STORAGE_KEY, dataInput);
 }
 
 function onSubmitForm(evt) {
@@ -32,7 +34,7 @@ form.addEventListener('submit', onSubmitForm);
 
 	const recoverData = loadFromStorage(STORAGE_KEY);
 if (recoverData === undefined) {
-		const savedInput = saveToStorage(STORAGE_KEY, dataInput);
+		 saveToStorage(STORAGE_KEY, dataInput);
 		} else if (recoverData.email === '' || recoverData.message === '') {
 			return;
 		} else {
