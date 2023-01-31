@@ -1,6 +1,5 @@
 import throttle from 'lodash.throttle';
 import { saveToStorage, loadFromStorage } from './storage.js';
-
 const form = document.querySelector('.feedback-form');
 const STORAGE_KEY = 'feedback-form-state';
 
@@ -12,16 +11,19 @@ const dataInput = {
 function saveToInput(evt) {
 	dataInput.email = evt.currentTarget[0].value;
 	// console.log(evt.currentTarget.children)
-	dataInput.message = evt.currentTarget[1].value;
+	dataInput.message = evt.currentTarget[1].value;	
 	saveToStorage(STORAGE_KEY, dataInput);
 }
 
 function onSubmitForm(evt) {
 	evt.preventDefault();
-	console.log(dataInput);
-
+	 if(form.email.value === '' || form.message.value === ''){
+		return false;
+	 }else{
+		console.log(dataInput);
+	 }
 	formCleaner();
-	localStorage.removeItem(STORAGE_KEY);
+	localStorage.removeItem(STORAGE_KEY);	
 }
 
 function formCleaner() {
@@ -41,5 +43,3 @@ if (recoverData === undefined) {
 		 form.email.value = recoverData.email || '';
  	    form.message.value = recoverData.message || '';
 		};
-
-
