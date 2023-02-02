@@ -17,11 +17,9 @@ function saveToInput(evt) {
 function onSubmitForm(evt) {
 	evt.preventDefault();
 	console.log(dataInput);
-	//  if(form.email.value === '' || form.message.value === ''){
-	// 	return false;
-	//  }else{
-	// 	console.log(dataInput);
-	// }	
+	 if(form.email.value === '' || form.message.value === ''){
+		return ;
+	 	
 	formCleaner();
 	storageCleaner();	
 }
