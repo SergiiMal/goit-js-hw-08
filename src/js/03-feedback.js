@@ -16,11 +16,12 @@ function saveToInput(evt) {
 
 function onSubmitForm(evt) {
 	evt.preventDefault();
-	 if(form.email.value === '' || form.message.value === ''){
-		return false;
-	 }else{
-		console.log(dataInput);
-	}	
+	console.log(dataInput);
+	//  if(form.email.value === '' || form.message.value === ''){
+	// 	return false;
+	//  }else{
+	// 	console.log(dataInput);
+	// }	
 	formCleaner();
 	storageCleaner()	
 }
@@ -37,7 +38,8 @@ function storageCleaner() {
 form.addEventListener('input', throttle(saveToInput), 500);
 form.addEventListener('submit', onSubmitForm);
 
-	const recoverData = loadFromStorage(STORAGE_KEY);
+const recoverData = loadFromStorage(STORAGE_KEY);
+	
 if (recoverData === undefined) {
 		 const saveToInput = saveToStorage(STORAGE_KEY, dataInput);
 		} else if (recoverData.email === '' || recoverData.message === '') {
