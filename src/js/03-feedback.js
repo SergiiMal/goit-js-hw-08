@@ -23,7 +23,7 @@ function onSubmitForm(evt) {
 	// 	console.log(dataInput);
 	// }	
 	formCleaner();
-	storageCleaner()	
+	storageCleaner();	
 }
 
 function formCleaner() {
