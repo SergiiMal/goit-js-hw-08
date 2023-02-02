@@ -10,23 +10,24 @@ const dataInput = {
 
 function saveToInput(evt) {
 	dataInput.email = evt.currentTarget[0].value;
-	dataInput.message = evt.currentTarget[1].value;	
-	const saveToInput = saveToStorage(STORAGE_KEY, dataInput);
+	dataInput.message = evt.currentTarget[1].value;
+	 saveToStorage(STORAGE_KEY, dataInput);
 }
 
 function onSubmitForm(evt) {
-	evt.preventDefault();
-	console.log(dataInput);
-	if (form.email.value === '' || form.message.value === '') {
-		return;
+	evt.preventDefault();	
+	 if(form.email.value === '' || form.message.value === ''){
+		return false;
+	 }else{
+		console.log(recoverData);
 	}
 	formCleaner();
-	storageCleaner();
+	storageCleaner()
 }
 
 function formCleaner() {
 	 form[0].value = '';
-    form[1].value = '';  
+    form[1].value = '';
 }
 
 function storageCleaner() {
@@ -35,14 +36,12 @@ function storageCleaner() {
 
 form.addEventListener('input', throttle(saveToInput), 500);
 form.addEventListener('submit', onSubmitForm);
-
 const recoverData = loadFromStorage(STORAGE_KEY);
 	
 if (recoverData === undefined) {
-		 const saveToInput = saveToStorage(STORAGE_KEY, dataInput);
-		} else if (recoverData.email === '' || recoverData.message === '') {
-			return;
-		} else {
+		 return saveToStorage(STORAGE_KEY, dataInput);
+}else {
 		 form.email.value = recoverData.email || '';
  	    form.message.value = recoverData.message || '';
-		};
+		} ;
+
