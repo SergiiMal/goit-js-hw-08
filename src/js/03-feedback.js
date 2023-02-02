@@ -11,7 +11,7 @@ const dataInput = {
 function saveToInput(evt) {
 	dataInput.email = evt.currentTarget[0].value;
 	dataInput.message = evt.currentTarget[1].value;	
-	const saveToInput = saveToStorage(STORAGE_KEY, dataInput);
+	saveToStorage(STORAGE_KEY, dataInput);
 }
 
 function onSubmitForm(evt) {
@@ -20,10 +20,12 @@ function onSubmitForm(evt) {
 		return false;
 	 }else{
 		console.log(dataInput);
-	 }
-	formCleaner();
-	const saveToInput = localStorage.removeItem(STORAGE_KEY);	
+	}
+	
+	
+	localStorage.removeItem(STORAGE_KEY);	
 }
+formCleaner();
 
 function formCleaner() {
 	 form[0].value = '';
