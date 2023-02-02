@@ -22,10 +22,14 @@ function onSubmitForm(evt) {
 		console.log(dataInput);
 	}
 	
-	
-	localStorage.removeItem(STORAGE_KEY);	
+	formCleaner();
+	storageCleaner()	
 }
-formCleaner();
+
+function storageCleaner() {
+	localStorage.removeItem(STORAGE_KEY);
+}
+
 
 function formCleaner() {
 	 form[0].value = '';
