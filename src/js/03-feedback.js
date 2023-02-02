@@ -10,9 +10,8 @@ const dataInput = {
 
 function saveToInput(evt) {
 	dataInput.email = evt.currentTarget[0].value;
-	// console.log(evt.currentTarget.children)
 	dataInput.message = evt.currentTarget[1].value;	
-	saveToStorage(STORAGE_KEY, dataInput);
+	const saveToInput = saveToStorage(STORAGE_KEY, dataInput);
 }
 
 function onSubmitForm(evt) {
@@ -23,7 +22,7 @@ function onSubmitForm(evt) {
 		console.log(dataInput);
 	 }
 	formCleaner();
-	localStorage.removeItem(STORAGE_KEY);	
+	const saveToInput = localStorage.removeItem(STORAGE_KEY);	
 }
 
 function formCleaner() {
