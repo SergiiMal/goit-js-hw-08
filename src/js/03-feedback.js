@@ -20,20 +20,18 @@ function onSubmitForm(evt) {
 		return false;
 	 }else{
 		console.log(dataInput);
-	}
-	
+	}	
 	formCleaner();
 	storageCleaner()	
 }
 
-function storageCleaner() {
-	localStorage.removeItem(STORAGE_KEY);
-}
-
-
 function formCleaner() {
 	 form[0].value = '';
     form[1].value = '';  
+}
+
+function storageCleaner() {
+	localStorage.removeItem(STORAGE_KEY);
 }
 
 form.addEventListener('input', throttle(saveToInput), 500);
